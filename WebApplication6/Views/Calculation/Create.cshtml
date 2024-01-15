@@ -1,0 +1,39 @@
+﻿@model RedingtonTask.Domain.Entities.ProbabilityViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Probability</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Calculation" asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FirstValue" class="control-label"></label>
+                <input asp-for="FirstValue" class="form-control" />
+                <span asp-validation-for="FirstValue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SecondValue" class="control-label"></label>
+                <input asp-for="SecondValue" class="form-control" />
+                <span asp-validation-for="SecondValue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FunctionType" class="control-label"></label>
+                <select asp-for="FunctionType" class="form-control">
+                    <option value="">Please Select</option>
+                    <option value="CombinedWith">CombinedWith</option>
+                    <option value="Either">Either</option>
+                </select>
+                <span asp-validation-for="FunctionType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
